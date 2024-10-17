@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import {
@@ -10,38 +9,25 @@ import {
 } from "react-router-dom";
 import store from './app/store'
 import { Provider } from 'react-redux'
-// import Layout, { loader as layoutLoader } from "./app/components/layout";
 // @ts-ignore
 import Layout from "./app/components/Layout";
 import ErrorPage from "./app/pages/404";
-// import Contact from "./app/routes/contact";
 
 
 import "./index.css";
 import Login from "./app/features/auth/components/Login";
 import Dashboard from "./app/pages/Dashboard";
-// import Cart from "./app/features/cart/components/Cart";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout />,
         errorElement: <ErrorPage />,
-        // loader: layoutLoader,
         children: [
             {
                 path: "/",
                 element: <Dashboard />,
             },
-            // {
-            //     path: "contacts/:contactId",
-            //     element: <Contact />,
-            // },
-            // {
-            //     path: "cart",
-            //     element: <Cart name="test" />
-            //
-            // }
         ],
     },
     {
